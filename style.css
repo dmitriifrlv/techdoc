@@ -1,0 +1,179 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  display: grid;
+  grid-template-columns: 1fr 5fr;
+  grid-template-areas: "nav content ";
+  background-color: rgb(243, 240, 235);
+  line-height: 1.5;
+  font-family: "Playfair Display", serif;
+  font-size: 18px;
+}
+
+header {
+  color: black;
+  padding: 1rem;
+  text-align: center;
+  font-size: 1.25rem;
+}
+
+#main-doc header {
+  text-align: left;
+  margin: 0px;
+}
+nav {
+  grid-area: nav;
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  width: 300px;
+  height: 100%;
+  border-right: 2px solid black;
+  border-color: black;
+  background-color: #f1f1f1;
+}
+
+#navbar ul {
+  height: 90%;
+  padding: 0;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+#navbar li {
+  color: black;
+  border-top: 1px solid black;
+  list-style: none;
+  position: relative;
+  width: 100%;
+}
+
+#navbar a {
+  display: block;
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+  padding: 15px;
+}
+
+#navbar a:active {
+  background-color: #4caf50;
+  color: white;
+}
+
+#navbar a:hover:not(.active) {
+  background-color: #555;
+  color: white;
+}
+
+.content {
+  grid-area: content;
+}
+
+#main-doc {
+  position: absolute;
+  margin-left: 310px;
+  padding: 20px;
+  margin-bottom: 120px;
+}
+
+img {
+  margin: 1rem;
+  width: 100%;
+  height: auto;
+}
+
+section p {
+  padding: 1rem;
+  color: black;
+  font-size: 1rem;
+  line-height: 1.5rem;
+}
+
+section li {
+  margin: 15px 0px 0px 20px;
+}
+
+code {
+  display: block;
+  text-align: left;
+  position: relative;
+  word-break: normal;
+  word-wrap: normal;
+  line-height: 1.5rem;
+  background-color: #f7f7f7;
+  padding: 10px;
+  margin: 10px;
+  border-radius: 1rem;
+  font-size: 16px;
+}
+
+@media only screen and (max-width: 700px) {
+  html,
+  body {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-areas: "nav 
+                        content ";
+    font-size: 16px;
+  }
+  #navbar ul {
+    border: 1px solid;
+    height: 200px;
+  }
+
+  #navbar header {
+    font-size: 1rem;
+    padding: 0;
+    margin: 0;
+  }
+
+  #navbar {
+    background-color: #f1f1f1;
+    position: absolute;
+    top: 0;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    max-height: 250px;
+    z-index: 1;
+    border-bottom: 2px solid;
+    border: none;
+  }
+
+  #main-doc {
+    position: relative;
+    margin-left: 0px;
+    margin-top: 270px;
+    padding-left: 0px;
+  }
+
+  p {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+  }
+
+  .main-section {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-left: 1rem;
+  }
+
+  #navbar > ul > li > a {
+    font-size: 16px;
+    padding: 10px;
+  }
+  header {
+    font-size: 1.25rem;
+    padding: 10px;
+  }
+}
